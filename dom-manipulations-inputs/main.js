@@ -46,23 +46,18 @@ document
     // TASK #4
     var carsModel = document.querySelectorAll('.selection');
     var content = carsModel[0].options[carsModel[0].selectedIndex];
-    model = content.getAttribute('value')
-    msrp = content.getAttribute('data-msrp')
-    mpg = content.getAttribute('data-mpg')
-    edmunds = content.getAttribute('data-edmunds')
-    img = content.getAttribute('data-img')
 
-    document.querySelector(".model").textContent = model;
-    document.querySelector(".msrp").textContent = msrp;
-    document.querySelector(".mpg").textContent = mpg;
-    document.querySelector(".edmunds").textContent = edmunds;
+    document.querySelector(".model").textContent = content.value;
+    document.querySelector(".msrp").textContent = content.dataset.msrp;
+    document.querySelector(".mpg").textContent = content.dataset.mpg;
+    document.querySelector(".edmunds").textContent = content.dataset.edmunds;
 
-    if (Aatroxclicks % 2 != 0) {
-      // Cambiar a una imagen cualquiera
-      Aatrox.setAttribute("src", [UnaRuta_e_Imagen_Existente]);
-    } else {
-      // Reestablecer la original
-      Aatrox.setAttribute("src", Aatrox.getAttribute("data-src"));
-    }
+    var img = document.querySelector('.img-box');
+
+    // if () {
+
+    //   img.setAttribute('src', './images/' + img + '.jpg')
+
+    // }
 
   });
