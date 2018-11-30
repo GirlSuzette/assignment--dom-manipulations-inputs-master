@@ -46,18 +46,22 @@ document
     // TASK #4
     var carsModel = document.querySelectorAll('.selection');
     var content = carsModel[0].options[carsModel[0].selectedIndex];
-
+    img = (content.dataset.img)
     document.querySelector(".model").textContent = content.value;
     document.querySelector(".msrp").textContent = content.dataset.msrp;
     document.querySelector(".mpg").textContent = content.dataset.mpg;
     document.querySelector(".edmunds").textContent = content.dataset.edmunds;
 
-    var img = document.querySelector('.img-box');
 
-    // if () {
-
-    //   img.setAttribute('src', './images/' + img + '.jpg')
-
-    // }
+    var imgBox = document.querySelector(".img-box img");
+    if (imgBox) {
+      imgBox.setAttribute("src", "./images/" + img);
+    } else {
+      parent.innerHTML = '';
+      var image = document.createElement("img");
+      image.setAttribute("src", "./images/" + img);
+      var imageParent = document.querySelector(".img-box");
+      imageParent.appendChild(image);
+    }
 
   });
